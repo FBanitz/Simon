@@ -1,6 +1,6 @@
 # simon
 
-A new Flutter project.
+Recréation du célèbre jeu "Simon" pour déveloper mes compétances
 
 ## Getting Started
 
