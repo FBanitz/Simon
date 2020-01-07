@@ -1,6 +1,6 @@
 # simon
 
-Recréation du célèbre jeu "Simon" pour déveloper mes compétances
+Recréation du célèbre jeu "Simon" pour déveloper mes compétences
 
 ## Getting Started
 
