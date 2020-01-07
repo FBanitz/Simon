@@ -48,7 +48,7 @@ class _GameState extends State<Game> {
   bool red = false;
   bool green = false;
   bool yellow = false;
-  bool buttonState = false;
+  //bool buttonState = false;
 /*
   void _incrementCounter() {
     setState(() {
@@ -72,8 +72,9 @@ class _GameState extends State<Game> {
     return Scaffold(
       body: Center(
         child: Container(
-          height: 450,
+          height: 393,
           child: GridView.count(
+            primary: false,
             padding: const EdgeInsets.all(10.0),
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
