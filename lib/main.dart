@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Simon'),
+      home: Game(title: 'Simon'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class Game extends StatefulWidget {
+  Game({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -40,11 +40,14 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _GameState createState() => _GameState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _GameState extends State<Game> {
   bool blue = false;
+  bool red = false;
+  bool green = false;
+  bool yellow = false;
   bool buttonState = false;
 /*
   void _incrementCounter() {
@@ -67,40 +70,57 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-             RaisedButton(
-              color: blue ? Colors.grey : Colors.blue,
-              onPressed: () {} ,
-              
-            ),
-          ],
+        child: Container(
+          height: 450,
+          child: GridView.count(
+            padding: const EdgeInsets.all(10.0),
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
+            crossAxisCount: 2,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: new RaisedButton(
+                  highlightColor: Colors.blue,
+                  color: blue ? Colors.blue : Colors.blue[100],
+                  onPressed: () {},
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: new RaisedButton(
+                  highlightColor: Colors.red,
+                  color: red ? Colors.red : Colors.red[100],
+                  onPressed: () {},
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: new RaisedButton(
+                  highlightColor: Colors.green,
+                  color: green ? Colors.green : Colors.green[100],
+                  onPressed: () {},
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: new RaisedButton(
+                  highlightColor: Colors.yellow,
+                  color: yellow ? Colors.yellow : Colors.yellow[100],
+                  onPressed: () {},
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      /*
+    );
+    /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
@@ -108,6 +128,5 @@ class _MyHomePageState extends State<MyHomePage> {
         
       ), // This trailing comma makes auto-formatting nicer for build methods.
       */
-    );
   }
 }
